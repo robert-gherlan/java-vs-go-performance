@@ -1,6 +1,7 @@
 package main
 
 import (
+	"net/http"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -10,7 +11,7 @@ func setupRouter() *gin.Engine {
 	r := gin.Default()
 	r.GET("/load", func(c *gin.Context) {
 		time.Sleep(1 * time.Second)
-		c.String(200, "")
+		c.String(http.StatusOK, "")
 	})
 	return r
 }
